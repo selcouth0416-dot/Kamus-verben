@@ -137,5 +137,30 @@ function render() {
     `;
   }).join('');
 }
+// Logika Dark Mode
+const darkModeToggle = document.getElementById('darkModeToggle');
+const htmlElement = document.documentElement;
+
+if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  htmlElement.classList.add('dark');
+  if (darkModeToggle) darkModeToggle.textContent = '☀️';
+} else {
+  htmlElement.classList.remove('dark');
+  if (darkModeToggle) darkModeToggle.textContent = '🌙';
+}
+
+if (darkModeToggle) {
+  darkModeToggle.addEventListener('click', () => {
+    if (htmlElement.classList.contains('dark')) {
+      htmlElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      darkModeToggle.textContent = '🌙';
+    } else {
+      htmlElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      darkModeToggle.textContent = '☀️';
+    }
+  });
+}
 
 render();
