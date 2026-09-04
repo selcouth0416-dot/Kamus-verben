@@ -13957,7 +13957,5 @@ const verbenData = [
     "praepositionen": [{ "präposition": "mit", "kasus": "Dativ" }],
     "konjugasi": { "praesens": { "ich": "kröne", "du": "krönst", "er_sie_es": "krönt", "wir": "krönen", "ihr": "krönt", "sie_Sie": "krönen" }, "praeteritum": { "ich": "krönte", "du": "kröntest", "er_sie_es": "krönte", "wir": "krönten", "ihr": "kröntet", "sie_Sie": "krönten" }, "perfekt": "hat gekrönt", "imperativ": "Kröne dein Werk!" },
     "contoh_kalimat": [{ "de": "Er krönte seine sportliche Karriere mit der Goldmedaille.", "id": "Dia menyempurnakan puncak karier olahraganya dengan medali emas." }]
-  },
-}⁠
-
- ];
+  }
+];
