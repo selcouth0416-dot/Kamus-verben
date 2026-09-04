@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kamus Verben Jerman</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4 py-4 sm:flex sm:items-center sm:justify-between">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">🇩🇪</span>
+          <h1 class="text-xl font-bold text-slate-900">Kamus Verben</h1>
+          <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2 py-0.5 rounded-full">A1–C2</span>
+        </div>
+        <p class="text-xs text-slate-500 mt-0.5">Koleksi konjugasi dan contoh kalimat verba bahasa Jerman</p>
+      </div>
+
+      <div class="mt-3 sm:mt-0 relative w-full sm:w-72">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Cari kata atau arti..."
+          class="w-full pl-9 pr-4 py-2 text-sm bg-slate-100 border border-transparent rounded-lg focus:outline-none focus:bg-white focus:border-slate-400 transition"
+        />
+        <svg class="w-4 h-4 absolute left-3 top-2.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 pb-3 flex gap-1.5 overflow-x-auto text-xs">
+      <button onclick="setFilter('ALL')" data-level="ALL" class="filter-btn px-3 py-1 rounded-md font-medium bg-slate-900 text-white transition">Semua</button>
+      <button onclick="setFilter('A1')" data-level="A1" class="filter-btn px-3 py-1 rounded-md font-medium bg-slate-200 text-slate-700 hover:bg-slate-300 transition">A1</button>
+      <button onclick="setFilter('A2')" data-level="A2" class="filter-btn px-3 py-1 rounded-md font-medium bg-slate-200 text-slate-700 hover:bg-slate-300 transition">A2</button>
+      <button onclick="setFilter('B1')" data-level="B1" class="filter-btn px-3 py-1 rounded-md font-medium bg-slate-200 text-slate-700 hover:bg-slate-300 transition">B1</button>
+      <button onclick="setFilter('B2')" data-level="B2" class="filter-btn px-3 py-1 rounded-md font-medium bg-slate-200 text-slate-700 hover:bg-slate-300 transition">B2</button>
+      <button onclick="setFilter('C1')" data-level="C1" class="filter-btn px-3 py-1 rounded-md font-medium bg-slate-200 text-slate-700 hover:bg-slate-300 transition">C1</button>
+      <button onclick="setFilter('C2')" data-level="C2" class="filter-btn px-3 py-1 rounded-md font-medium bg-slate-200 text-slate-700 hover:bg-slate-300 transition">C2</button>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-6">
+    <div class="flex items-center justify-between mb-4 text-xs font-semibold uppercase text-slate-500 tracking-wider">
+      <span id="counterText">Memuat kata...</span>
+    </div>
+
+    <div id="verbenGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+
+    <div id="emptyState" class="hidden text-center py-16">
+      <p class="text-slate-400 text-sm">Tidak ada kata kerja yang cocok dengan pencarian.</p>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
