@@ -1,0 +1,17 @@
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Custom scrollbar untuk list filter di layar mobile */
+header div::-webkit-scrollbar {
+  height: 4px;
+}
+
+header div::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+header div::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 4px;
+}
